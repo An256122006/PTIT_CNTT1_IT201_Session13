@@ -28,9 +28,8 @@ void print_stack(stack *s) {
    printf("%d\n",s->top);
    printf("%d\n",s->cap);
 }
-stack *pop(stack *s) {
-   s->top--;
-   return s->arr[s->top];
+int pop(stack *s) {
+   return s->arr[s->top--];
 }
 int main(){
    stack *s=creative(5);
@@ -39,7 +38,7 @@ int main(){
       scanf("%d",&data);
       push(s,data);
    }
-   pop(s);
-   print_stack(s);
+  int value= pop(s);
+   printf("%d",value);
    return 0;
 }
